@@ -1,0 +1,15 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        num_set = set()
+
+        for num in nums:
+            complement = target - num
+            if complement in num_set:
+
+                index1 = nums.index(complement)
+                index2 = nums.index(num, index1 + 1)
+                return [index1, index2]
+            
+            num_set.add(num)
+
+        return []
